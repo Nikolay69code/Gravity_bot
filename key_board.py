@@ -20,12 +20,3 @@ def kategory_keyboard():
                    KeyboardButton(text=text_message.DELETE)]
     keyb = ReplyKeyboardMarkup(keyboard=[buttons_row], resize_keyboard=True)
     return keyb
-
-def category_inline_keyboard():
-    buttons = [
-        InlineKeyboardButton(text=text_message.DRONES, callback_data="button1"),
-        InlineKeyboardButton(text=text_message.MEDICAL, callback_data="button2"),
-        InlineKeyboardButton(text=text_message.PROTECTION, callback_data="button3"),
-    ]
-    keyboard = InlineKeyboardMarkup(inline_keyboard=[buttons])
-    return keyboard
