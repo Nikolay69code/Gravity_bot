@@ -22,13 +22,13 @@ router.include_router(inl_handlers_router)
 @router.message(F.text == text_message.SOlDERS_BUTTON)
 async def help_handler(message:Message):
     await message.answer(text = text_message.SOlDERS_DESCRIPTION, parse_mode=ParseMode.MARKDOWN_V2,reply_markup = key_board.kategory_keyboard())
-    keyb = inl_key_board.category_inline_keyboard()
+    keyb = inl_key_board.build_shop_kb()
     await message.answer("Выберите одну из категорий.", reply_markup=keyb)
 
 @router.message(F.text == text_message.VOLUNTEER_BUTTON)
 async def help_handler(message:Message):
     await message.answer(text = text_message.VOLUNTEER_DESCRIPTION, parse_mode=ParseMode.MARKDOWN_V2,reply_markup = key_board.kategory_keyboard())
-    keyb = inl_key_board.category_inline_keyboard()
+    keyb = inl_key_board.build_shop_kb()
     await message.answer("Выберите одну из категорий.", reply_markup=keyb)
 # @dp.message(F.photo)
 # async def photo_handler(message:Message):
@@ -48,19 +48,22 @@ async def help_handler(message:Message):
 # @dp.message(F.gifs)
 # async def photo_handler(message:Message):
 #     await message.answer(text = "К сожалению мы не распознаем гифки🤷‍♂️")
-@router.message(Command(text_message.PROTECTION))
-async def help_handler(message:Message):
-    await message.answer(text = text_message.SOlDERS_DESCRIPTION, parse_mode=ParseMode.MARKDOWN_V2)
-
-@router.message(Command(text_message.MEDICAL))
-async def help_handler(message:Message):
-    await message.answer(text = text_message.SOlDERS_DESCRIPTION, parse_mode=ParseMode.MARKDOWN_V2)
-
-@router.message(Command(text_message.DRONES))
-async def help_handler(message:Message):
-    await message.answer(text = text_message.SOlDERS_DESCRIPTION, parse_mode=ParseMode.MARKDOWN_V2)
-
-@router.message(Command("Свои варианты"))
-async def help_handler(message:Message):
-    await message.answer(text = "Введите свои варианты")
-
+# @router.message(Command(text_message.PROTECTION))
+# async def help_handler(message:Message):
+#     await message.answer(text = text_message.SOlDERS_DESCRIPTION, parse_mode=ParseMode.MARKDOWN_V2)
+#
+# @router.message(Command(text_message.MEDICAL))
+# async def help_handler(message:Message):
+#     await message.answer(text = text_message.SOlDERS_DESCRIPTION, parse_mode=ParseMode.MARKDOWN_V2)
+#
+# @router.message(Command(text_message.DRONES))
+# async def help_handler(message:Message):
+#     await message.answer(text = text_message.SOlDERS_DESCRIPTION, parse_mode=ParseMode.MARKDOWN_V2)
+#
+# @router.message(Command("Свои варианты"))
+# async def help_handler(message:Message):
+#     await message.answer(text = "Введите свои варианты")
+#
+# @router.message(Command("shoop"))
+# async def help_handler(message:Message):
+#     await message.answer(text = "Your shoop actions", reply_markup=inl_key_board.shoop_act())

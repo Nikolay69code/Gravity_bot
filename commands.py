@@ -15,9 +15,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton,ReplyKeyboardRemov
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 router = Router(name = __name__)
-@router.message(CommandStart())
-async def start_hendler(message:Message):
-    await message.answer(text = text_message.WELCOME, parse_mode=ParseMode.MARKDOWN_V2,reply_markup=key_board.start_keyboard())
+
 
 @router.message(Command("help"))
 async def help_handler(message:Message):
